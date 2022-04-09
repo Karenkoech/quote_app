@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Quote} from './quote'
+import { Quote } from '../quote';
+
+
 @Component({
   selector: 'app-quote-forms',
   templateUrl: './quote-forms.component.html',
@@ -7,7 +9,7 @@ import {Quote} from './quote'
 })
 export class QuoteFormsComponent implements OnInit {
 
-  userModel=new User
+      userModel=new Quote('','','','','');
   constructor() { }
 
   ngOnInit(): void {
