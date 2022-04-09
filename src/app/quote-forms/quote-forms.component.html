@@ -3,32 +3,38 @@
     <h1>Quote form</h1>
     <p>Add your quote here</p>
 </div>
-    <form #userForm="ngForm">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
 
         <!-- {{ userForm.value | json}}
         <hr/>
+        <!-- {{userModel | json}} --> 
+        <!-- <hr/>
         {{userModel | json}} -->
+        <!-- {{userForm.form.invalid}} -->
 
         <div class="form-group">
             <label>Name</label>
-            <input type="text" required #name="ngModel" class="form-control" name="userName"[(ngModel)]="userModel.name">
+            <input type="text" required #name="ngModel"[class.is-invalid]="name.invalid && name.touched" class="form-control" name="userName"[(ngModel)]="userModel.name">
+            <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required!</small>
         </div> <br>
-        {{name.untouched}}
+        <!-- {{name.valid}} -->
         <div class="form-group"> 
-            <label>Subject</label>
-            <input type="text" class="form-control"name="Quotesubject"[(ngModel)]="userModel.quoteSubject">
-            
+            <label>Quote Subject</label>
+            <input type="text"required class="form-control"name="Quotesubject"[(ngModel)]="userModel.quoteSubject">
+            <small class="text-danger" [class.d-none]="name.valid || name.untouched">Subject required!</small>
         </div> <br> 
         <div class="form-group">
             <label>Quote</label>
             <textarea class="form-control" id="description" rows="2" required name="description"[(ngModel)]="userModel.description"></textarea>
+            <small class="text-danger" [class.d-none]="name.valid || name.untouched">Please enter your quote here!</small>
         </div> <br>
             <div class="form-group">
                 <label>Quote author</label>
-                <input type="text" class="form-control"name="author"[(ngModel)]="userModel.quoteAuthor">
+                <input type="text" required class="form-control"name="author"[(ngModel)]="userModel.quoteAuthor">
+                <small class="text-danger" [class.d-none]="name.valid || name.untouched">Author Name required!</small>
             </div> <br>
         
-        <button class="btn btn-primary">Submit quote</button>
+        <button [disabled]="userForm.form.invalid" class="btn btn-primary">Submit quote</button>
     </form>
 
 </div>

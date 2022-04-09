@@ -10,9 +10,13 @@ import { Quote } from '../quote';
 export class QuoteFormsComponent implements OnInit {
 
       userModel=new Quote('','','','','');
+      name="";
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  onSubmit() {
+    alert('Great quote you have there '+ this.name);
+  }
 }
