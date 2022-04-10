@@ -1,1 +1,8 @@
-<p>quote-detail works!</p>
+<br><span class="card-subtitle mb-2">Author; <span id=" name "> {{quote.name}} </span>
+<span id=" date " >: <span id="datecolor">{{quote.dateCreated|datePipe}}</span></span>
+</span>
+<div class="container-fluid" id="buttons">
+    <button (click)="upVote()" class=" btn btn-sm btn-success ">{{likes}} <i class="fa fa-thumbs-up " id="like "></i></button> <br>
+    <button (click)="downVote()" class="btn btn-sm dislike " id="dislike ">{{dislikes}} <i class="fa fa-thumbs-down " id="dislike "></i></button><br>
+    <a (click)="deleteQuote(true) " class="btn btn-danger " id="delete ">Delete</a>
+</div>
