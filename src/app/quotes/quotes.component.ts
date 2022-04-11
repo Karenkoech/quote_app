@@ -22,7 +22,7 @@ export class QuotesComponent implements OnInit {
   }
   deleteAquote(isdeleted:any,index:number){
     if(isdeleted){
-      let check=confirm("Are you sure you want to delete this quote");
+      let check=confirm("Hey!Do want to delete this quote?");
       if(check){
 this.quotes.splice(index,1);
       }
@@ -30,12 +30,16 @@ this.quotes.splice(index,1);
 
   }
   newQuote(quote:Quote){
-    let quoteLength=this.quotes.length;
-    quote.id=quoteLength+1;
-    this.quotes.unshift(quote);
+    let quotesLength=this.quotes.length+1;
+    quote.id=quotesLength+1;
+    let quoteObj=new Quote(quotesLength,quote.name,quote.description,quote.quoteAuthor,new Date());
+    this.quotes.unshift(quoteObj);
+    
+  
   QuotesComponent.constructor(); { }
 
-  this.ngOnInit(); void {
+  this.ngOnInit(); {
   }
-  }
-};
+  
+}
+}
