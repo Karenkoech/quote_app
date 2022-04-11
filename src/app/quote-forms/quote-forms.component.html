@@ -1,10 +1,10 @@
 <div class="container-fluid" class="shadowbox">
-    <div style="text-align:center;color:rgb(73, 5, 5) ; font: size 12px;"><h1>QUOTES</h1></div> <hr>
-    <div style="color:rgba(1, 8, 27, 0.409)">
+    <div style="text-align:center;color:rgb(49, 70, 119) ; font: size 12px;"><h1>QUOTES</h1></div> <hr>
+    <div style="text-align:center;color:black">
     <p>Displayed here are some of the slogans I live by;</p>
     <p>Feel free to add your quote here too.</p>
 </div> <br>
-    <form #userForm="ngForm" (ngSubmit)="addQuote()">
+    <form #userForm="ngForm" (ngSubmit)="addQuote(userForm)">
 
         <div class="form-group">
             <label>Name</label>
